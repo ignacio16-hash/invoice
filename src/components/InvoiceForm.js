@@ -25,19 +25,19 @@ class InvoiceForm extends React.Component {
       billFromEmail: '',
       billFromAddress: '',
       notes: '',
-      total: '0.00',
-      subTotal: '0.00',
+      total: '0',
+      subTotal: '0',
       taxRate: '',
-      taxAmmount: '0.00',
+      taxAmmount: '0',
       discountRate: '',
-      discountAmmount: '0.00'
+      discountAmmount: '0'
     };
     this.state.items = [
       {
         id: 0,
         name: '',
         description: '',
-        price: '1.00',
+        price: '1',
         quantity: 1
       }
     ];
@@ -56,7 +56,7 @@ class InvoiceForm extends React.Component {
     var items = {
       id: id,
       name: '',
-      price: '1.00',
+      price: '1',
       description: '',
       quantity: 1
     }
@@ -130,12 +130,12 @@ class InvoiceForm extends React.Component {
               <div class="d-flex flex-column">
                 <div className="d-flex flex-column">
                   <div class="mb-2">
-                    <span className="fw-bold">Fecha de emisión:</span>
+                    <span className="fw-bold">Emisión:</span>
                     <span className="current-date">{new Date().toLocaleDateString()}</span>
                   </div>
                 </div>
                 <div className="d-flex flex-row align-items-center">
-                  <span className="fw-bold d-block me-2">Fecha de vencimiento:</span>
+                  <span className="fw-bold d-block me-2">Vencimiento:</span>
                   <Form.Control type="date" value={this.state.dateOfIssue} name={"dateOfIssue"} onChange={(event) => this.editField(event)} style={{
                       maxWidth: '150px'
                     }} required="required"/>

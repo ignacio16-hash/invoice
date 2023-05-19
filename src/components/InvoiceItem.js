@@ -20,17 +20,17 @@ class InvoiceItem extends React.Component {
         <Table>
           <thead>
             <tr>
-              <th>ITEM</th>
+              <th>Servicio</th>
               <th>QTY</th>
-              <th>PRICE/RATE</th>
-              <th className="text-center">ACTION</th>
+              <th>Precio</th>
+              <th className="text-center">Acción</th>
             </tr>
           </thead>
           <tbody>
             {itemTable}
           </tbody>
         </Table>
-        <Button className="fw-bold" onClick={this.props.onRowAdd}>Add Item</Button>
+        <Button className="fw-bold" onClick={this.props.onRowAdd}>Añadir</Button>
       </div>
     );
 
@@ -49,8 +49,8 @@ class ItemRow extends React.Component {
             onItemizedItemEdit={this.props.onItemizedItemEdit}
             cellData={{
             type: "text",
-            name: "name",
-            placeholder: "Item name",
+            name: "servicio",
+            placeholder: "Servicio",
             value: this.props.item.name,
             id: this.props.item.id,
           }}/>
@@ -58,8 +58,8 @@ class ItemRow extends React.Component {
             onItemizedItemEdit={this.props.onItemizedItemEdit}
             cellData={{
             type: "text",
-            name: "description",
-            placeholder: "Item description",
+            name: "descripción",
+            placeholder: "Descripción del servicio",
             value: this.props.item.description,
             id: this.props.item.id
           }}/>
@@ -69,7 +69,7 @@ class ItemRow extends React.Component {
           onItemizedItemEdit={this.props.onItemizedItemEdit}
           cellData={{
             type: "number",
-            name: "quantity",
+            name: "cantidad",
             min: 1,
             step: "1",
             value: this.props.item.quantity,
@@ -82,9 +82,9 @@ class ItemRow extends React.Component {
             cellData={{
             leading: this.props.currency,
             type: "number",
-            name: "price",
+            name: "precio",
             min: 1,
-            step: "0.01",
+            step: "1",
             presicion: 2,
             textAlign: "text-end",
             value: this.props.item.price,
