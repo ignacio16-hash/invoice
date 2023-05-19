@@ -217,7 +217,7 @@ class InvoiceForm extends React.Component {
             <Form.Group className="my-3">
               <Form.Label className="fw-bold">% de impuestos:</Form.Label>
               <InputGroup className="my-1 flex-nowrap">
-                <Form.Control name="taxRate" type="number" value={this.state.taxRate} onChange={(event) => this.editField(event)} className="bg-white border" placeholder="0.0" min="0.00" step="0.01" max="100.00"/>
+                <Form.Control name="taxRate" type="number" value={this.state.taxRate} onChange={(event) => this.editField(event)} className="bg-white border" placeholder="0" min="0" step="0" max="100"/>
                 <InputGroup.Text className="bg-light fw-bold text-secondary small">
                   %
                 </InputGroup.Text>
@@ -226,7 +226,7 @@ class InvoiceForm extends React.Component {
             <Form.Group className="my-3">
               <Form.Label className="fw-bold">% de descuento:</Form.Label>
               <InputGroup className="my-1 flex-nowrap">
-                <Form.Control name="discountRate" type="number" value={this.state.discountRate} onChange={(event) => this.editField(event)} className="bg-white border" placeholder="0.0" min="0.00" step="0.01" max="100.00"/>
+                <Form.Control name="discountRate" type="number" value={this.state.discountRate} onChange={(event) => this.editField(event)} className="bg-white border" placeholder="0" min="0" step="0" max="100"/>
                 <InputGroup.Text className="bg-light fw-bold text-secondary small">
                   %
                 </InputGroup.Text>
