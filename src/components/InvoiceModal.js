@@ -43,20 +43,20 @@ class InvoiceModal extends React.Component {
                 </h6>
               </div>
               <div className="text-end ms-4">
-                <h6 className="fw-bold mt-1 mb-2">Amount&nbsp;Due:</h6>
+                <h6 className="fw-bold mt-1 mb-2">Monto&nbsp;Adeudado:</h6>
                 <h5 className="fw-bold text-secondary"> {this.props.currency} {this.props.total}</h5>
               </div>
             </div>
             <div className="p-4">
               <Row className="mb-4">
                 <Col md={4}>
-                  <div className="fw-bold">Billed to:</div>
+                  <div className="fw-bold">Cliente:</div>
                   <div>{this.props.info.billTo||''}</div>
                   <div>{this.props.info.billToAddress||''}</div>
                   <div>{this.props.info.billToEmail||''}</div>
                 </Col>
                 <Col md={4}>
-                  <div className="fw-bold">Billed From:</div>
+                  <div className="fw-bold">Prestador:</div>
                   <div>{this.props.info.billFrom||''}</div>
                   <div>{this.props.info.billFromAddress||''}</div>
                   <div>{this.props.info.billFromEmail||''}</div>
@@ -69,10 +69,10 @@ class InvoiceModal extends React.Component {
               <Table className="mb-0">
                 <thead>
                   <tr>
-                    <th>QTY</th>
-                    <th>DESCRIPTION</th>
-                    <th className="text-end">PRICE</th>
-                    <th className="text-end">AMOUNT</th>
+                    <th>Cantidad</th>
+                    <th>Descripción</th>
+                    <th className="text-end">Precio</th>
+                    <th className="text-end">Monto</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -101,26 +101,26 @@ class InvoiceModal extends React.Component {
                   </tr>
                   <tr className="text-end">
                     <td></td>
-                    <td className="fw-bold" style={{width: '100px'}}>SUBTOTAL</td>
+                    <td className="fw-bold" style={{width: '100px'}}>Subtotal</td>
                     <td className="text-end" style={{width: '100px'}}>{this.props.currency} {this.props.subTotal}</td>
                   </tr>
-                  {this.props.taxAmmount != 0.00 &&
+                  {this.props.taxAmmount != 0 &&
                     <tr className="text-end">
                       <td></td>
-                      <td className="fw-bold" style={{width: '100px'}}>TAX</td>
+                      <td className="fw-bold" style={{width: '100px'}}>I.V.A.</td>
                       <td className="text-end" style={{width: '100px'}}>{this.props.currency} {this.props.taxAmmount}</td>
                     </tr>
                   }
-                  {this.props.discountAmmount != 0.00 &&
+                  {this.props.discountAmmount != 0 &&
                     <tr className="text-end">
                       <td></td>
-                      <td className="fw-bold" style={{width: '100px'}}>DISCOUNT</td>
+                      <td className="fw-bold" style={{width: '100px'}}>Descuento</td>
                       <td className="text-end" style={{width: '100px'}}>{this.props.currency} {this.props.discountAmmount}</td>
                     </tr>
                   }
                   <tr className="text-end">
                     <td></td>
-                    <td className="fw-bold" style={{width: '100px'}}>TOTAL</td>
+                    <td className="fw-bold" style={{width: '100px'}}>Total</td>
                     <td className="text-end" style={{width: '100px'}}>{this.props.currency} {this.props.total}</td>
                   </tr>
                 </tbody>
@@ -141,7 +141,7 @@ class InvoiceModal extends React.Component {
               <Col md={6}>
                 <Button variant="outline-primary" className="d-block w-100 mt-3 mt-md-0" onClick={GenerateInvoice}>
                   <BiCloudDownload style={{width: '16px', height: '16px', marginTop: '-3px'}} className="me-2"/>
-                  Download Copy
+                  Descargar copia
                 </Button>
               </Col>
             </Row>
