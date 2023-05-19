@@ -20,17 +20,17 @@ class InvoiceItem extends React.Component {
         <Table>
           <thead>
             <tr>
-              <th>ITEM</th>
+              <th>Servicio</th>
               <th>QTY</th>
-              <th>PRICE/RATE</th>
-              <th className="text-center">ACTION</th>
+              <th>Precio</th>
+              <th className="text-center">Acción</th>
             </tr>
           </thead>
           <tbody>
             {itemTable}
           </tbody>
         </Table>
-        <Button className="fw-bold" onClick={this.props.onRowAdd}>Add Item</Button>
+        <Button className="fw-bold" onClick={this.props.onRowAdd}>Añadir servicio</Button>
       </div>
     );
 
