@@ -27,7 +27,7 @@ class InvoiceForm extends React.Component {
       billFromAddress: 'Quilpué',
       billFromRUT: '65081067-8',
       billFromGiro: 'Asesoría y Capacitación en Lengua de Señas',
-      notes: 'Sólo mediante transferencia hacia Banco del Estado. \<br\>Cuenta vista: 254-7-010850-1\</br\> \<br\>RUT, Nombre y correo: Están ya incluidos en este documento, en el campo "Presatdor".\</br\>',
+      notes: 'Sólo mediante transferencia hacia Banco del Estado. Cuenta vista: 254-7-010850-1 RUT, Nombre y correo: Están ya incluidos en este documento, en el campo "Prestador".',
       total: '0',
       subTotal: '0',
       taxRate: '',
