@@ -22,7 +22,7 @@ function GenerateInvoice() {
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('invoice-001.pdf');
+    pdf.save('cotizacion-001.pdf');
   });
 }
 
@@ -37,20 +37,20 @@ class InvoiceModal extends React.Component {
           <div id="invoiceCapture">
             <div className="d-flex flex-row justify-content-between align-items-start bg-light w-100 p-4">
               <div className="w-100">
-                <h4 className="fw-bold my-2">{this.props.info.billFrom||'John Uberbacher'}</h4>
+                <h4 className="fw-bold my-2">{this.props.info.billFrom||'Taller LSCh Sordos de Marga Marga'}</h4>
                 <h6 className="fw-bold text-secondary mb-1">
-                  Invoice #: {this.props.info.invoiceNumber||''}
+                  Folio cotización #: {this.props.info.invoiceNumber||''}
                 </h6>
               </div>
               <div className="text-end ms-4">
-                <h6 className="fw-bold mt-1 mb-2">Monto&nbsp;Adeudado:</h6>
+                <h6 className="fw-bold mt-1 mb-2">Monto&nbsp;cotización:</h6>
                 <h5 className="fw-bold text-secondary"> {this.props.currency} {this.props.total}</h5>
               </div>
             </div>
             <div className="p-4">
               <Row className="mb-4">
                 <Col md={4}>
-                  <div className="fw-bold">Cliente:</div>
+                  <div className="fw-bold">Solicitó:</div>
                   <div>{this.props.info.billTo||''}</div>
                   <div>{this.props.info.billToAddress||''}</div>
                   <div>{this.props.info.billToEmail||''}</div>
@@ -62,7 +62,7 @@ class InvoiceModal extends React.Component {
                   <div>{this.props.info.billFromEmail||''}</div>
                 </Col>
                 <Col md={4}>
-                  <div className="fw-bold mt-2">Date Of Issue:</div>
+                  <div className="fw-bold mt-2">Válida hasta:</div>
                   <div>{this.props.info.dateOfIssue||''}</div>
                 </Col>
               </Row>
@@ -70,9 +70,9 @@ class InvoiceModal extends React.Component {
                 <thead>
                   <tr>
                     <th>Cantidad</th>
-                    <th>Descripción</th>
-                    <th className="text-end">Precio</th>
-                    <th className="text-end">Monto</th>
+                    <th>Descripción/servicio</th>
+                    <th className="text-end">Por unidad</th>
+                    <th className="text-end">total</th>
                   </tr>
                 </thead>
                 <tbody>
