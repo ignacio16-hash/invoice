@@ -84,7 +84,7 @@ class ItemRow extends React.Component {
             type: "number",
             name: "price",
             min: 1,
-            step: "0.01",
+            step: "1",
             presicion: 2,
             textAlign: "text-end",
             value: this.props.item.price,
