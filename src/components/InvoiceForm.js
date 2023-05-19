@@ -68,17 +68,17 @@ class InvoiceForm extends React.Component {
     var subTotal = 0;
 
     items.map(function(items) {
-      subTotal = parseFloat(subTotal + (parseFloat(items.price).toFixed(2) * parseInt(items.quantity))).toFixed(2)
+      subTotal = parseFloat(subTotal + (parseFloat(items.price).toFixed(0) * parseInt(items.quantity))).toFixed(0)
     });
 
     this.setState({
-      subTotal: parseFloat(subTotal).toFixed(2)
+      subTotal: parseFloat(subTotal).toFixed(0)
     }, () => {
       this.setState({
-        taxAmmount: parseFloat(parseFloat(subTotal) * (this.state.taxRate / 100)).toFixed(2)
+        taxAmmount: parseFloat(parseFloat(subTotal) * (this.state.taxRate / 100)).toFixed(0)
       }, () => {
         this.setState({
-          discountAmmount: parseFloat(parseFloat(subTotal) * (this.state.discountRate / 100)).toFixed(2)
+          discountAmmount: parseFloat(parseFloat(subTotal) * (this.state.discountRate / 100)).toFixed(0)
         }, () => {
           this.setState({
             total: ((subTotal - this.state.discountAmmount) + parseFloat(this.state.taxAmmount))
@@ -215,7 +215,7 @@ class InvoiceForm extends React.Component {
               </Form.Select>
             </Form.Group>
             <Form.Group className="my-3">
-              <Form.Label className="fw-bold">% de impuestos:</Form.Label>
+              <Form.Label className="fw-bold">Impuestos:</Form.Label>
               <InputGroup className="my-1 flex-nowrap">
                 <Form.Control name="taxRate" type="number" value={this.state.taxRate} onChange={(event) => this.editField(event)} className="bg-white border" placeholder="0" min="0" step="0" max="100"/>
                 <InputGroup.Text className="bg-light fw-bold text-secondary small">
@@ -224,7 +224,7 @@ class InvoiceForm extends React.Component {
               </InputGroup>
             </Form.Group>
             <Form.Group className="my-3">
-              <Form.Label className="fw-bold">% de descuento:</Form.Label>
+              <Form.Label className="fw-bold">Descuento:</Form.Label>
               <InputGroup className="my-1 flex-nowrap">
                 <Form.Control name="discountRate" type="number" value={this.state.discountRate} onChange={(event) => this.editField(event)} className="bg-white border" placeholder="0" min="0" step="0" max="100"/>
                 <InputGroup.Text className="bg-light fw-bold text-secondary small">
