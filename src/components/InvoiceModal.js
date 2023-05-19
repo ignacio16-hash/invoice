@@ -54,12 +54,14 @@ class InvoiceModal extends React.Component {
                   <div>{this.props.info.billTo||''}</div>
                   <div>{this.props.info.billToAddress||''}</div>
                   <div>{this.props.info.billToEmail||''}</div>
+                  <div>{this.props.info.billToRUT||''}</div>
                 </Col>
                 <Col md={4}>
                   <div className="fw-bold">Prestador:</div>
                   <div>{this.props.info.billFrom||''}</div>
                   <div>{this.props.info.billFromAddress||''}</div>
                   <div>{this.props.info.billFromEmail||''}</div>
+                  <div>{this.props.info.billFromRUT||''}</div>
                 </Col>
                 <Col md={4}>
                   <div className="fw-bold mt-2">Válida hasta:</div>
