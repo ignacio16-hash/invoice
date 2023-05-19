@@ -135,7 +135,7 @@ class InvoiceModal extends React.Component {
             <Row>
               <Col md={6}>
                 <Button variant="primary" className="d-block w-100" onClick={GenerateInvoice}>
-                  <BiPaperPlane style={{width: '15px', height: '15px', marginTop: '-3px'}} className="me-2"/>Send Invoice
+                  <BiPaperPlane style={{width: '15px', height: '15px', marginTop: '-3px'}} className="me-2"/>Enviar cotización
                 </Button>
               </Col>
               <Col md={6}>
