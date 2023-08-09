@@ -20,7 +20,7 @@ class InvoiceItem extends React.Component {
         <Table>
           <thead>
             <tr>
-              <th>Servicio</th>
+              <th>Servicio/producto</th>
               <th>QTY</th>
               <th>Precio</th>
               <th className="text-center">Acción</th>
